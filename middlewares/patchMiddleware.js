@@ -1,4 +1,4 @@
-const { joiSchemas } = require("../models/contact");
+const { joiSchemas } = require("../models/Contact");
 
 const { patchSchema } = joiSchemas;
 

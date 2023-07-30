@@ -9,13 +9,18 @@ const {
 } = require("./deleteContactByIdController");
 
 const {
-  updateContactByIdController,
-} = require("./updateContactByIdController");
+  putContactByIdController,
+} = require("./putContactByIdController");
+
+const {
+  patchContactByIdController,
+} = require("./patchContactByIdController");
 
 module.exports = {
   getAllContactsController,
   getContactByIdController,
   addNewContactController,
   deleteContactByIdController,
-  updateContactByIdController,
+  putContactByIdController,
+  patchContactByIdController,
 };
