@@ -1,4 +1,4 @@
-const { UserModel } = require("../../models");
+const { UserModel } = require("../../models/User");
 
 const currentController = async (req, res) => {
   const { _id } = req.user;

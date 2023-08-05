@@ -1,20 +1,30 @@
 const express = require("express");
 
-const { authMiddleware, userValidMiddleware } = require("../../middlewares");
+const {
+  authMiddleware,
+  userValidMiddleware,
+  subscriptionMiddleware,
+} = require("../../middlewares");
 
 const {
   currentController,
   loginController,
   logoutController,
   registerController,
-} = require("../../controllers");
+  subscriptionController,
+} = require("../../controllers/Users");
 
-const userRouter = express.Router();
+const router = express.Router();
 
-userRouter.patch("/");
-userRouter.post("/register", userValidMiddleware, registerController);
-userRouter.post("/login", userValidMiddleware, loginController);
-userRouter.post("/logout", authMiddleware, logoutController);
-userRouter.get("/current", authMiddleware, currentController);
+router.patch(
+  "/",
+  authMiddleware,
+  subscriptionMiddleware,
+  subscriptionController
+);
+router.post("/register", userValidMiddleware, registerController);
+router.post("/login", userValidMiddleware, loginController);
+router.post("/logout", authMiddleware, logoutController);
+router.get("/current", authMiddleware, currentController);
 
-module.exports = userRouter;
+module.exports = router;
