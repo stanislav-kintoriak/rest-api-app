@@ -5,7 +5,7 @@ const userValidMiddleware = async (req, res, next) => {
     await joiUserSchema.validateAsync(req.body);
     next();
   } catch (error) {
-    res.status(400).json({ message: "Validation error" });
+    res.status(400).json({ message: `Validation error ${error.message}` });
   }
 };
 
