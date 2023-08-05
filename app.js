@@ -21,9 +21,6 @@ app.use(logger(formatsLogger));
 app.use(cors());
 app.use(express.json());
 
-app.use(patchMiddleware);
-app.use(putMiddleware);
-
 app.use(
   "/api/contacts",
   patchMiddleware,
