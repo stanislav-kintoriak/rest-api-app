@@ -30,8 +30,6 @@ const joiUserSchema = Joi.object({
   token: Joi.string(),
 });
 
-
-
 const UserModel = model("user", userSchema);
 
 module.exports = { UserModel, joiUserSchema };

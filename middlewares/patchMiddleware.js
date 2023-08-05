@@ -5,14 +5,14 @@ const { patchSchema } = joiSchemas;
 const patchMiddleware = async (req, res, next) => {
   if (req.method === "PATCH") {
     if (JSON.stringify(req.body) === "{}") {
-        res.status(400).json({ message: "missing field favorite" })
-        return
+      res.status(400).json({ message: "missing field favorite" });
+      return;
     }
     try {
       await patchSchema.validateAsync(req.body);
       next();
     } catch (error) {
-      res.status(400).json({message: error.message});
+      res.status(400).json({ message: error.message });
     }
   } else {
     next();

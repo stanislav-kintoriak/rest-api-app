@@ -6,21 +6,21 @@ const {
   addNewContactController,
   deleteContactByIdController,
   putContactByIdController,
-  patchContactByIdController
-} = require("../../controllers");
+  patchContactByIdController,
+} = require("../../controllers/Contacts");
 
-const router = express.Router();
+const contactsRouter = express.Router();
 
-router.get("/", getAllContactsController);
+contactsRouter.get("/", getAllContactsController);
 
-router.get("/:contactId", getContactByIdController);
+contactsRouter.get("/:contactId", getContactByIdController);
 
-router.post("/", addNewContactController);
+contactsRouter.post("/", addNewContactController);
 
-router.delete("/:contactId", deleteContactByIdController);
+contactsRouter.delete("/:contactId", deleteContactByIdController);
 
-router.put("/:contactId", putContactByIdController);
+contactsRouter.put("/:contactId", putContactByIdController);
 
-router.patch("/:contactsId/favorite", patchContactByIdController)
+contactsRouter.patch("/:contactsId/favorite", patchContactByIdController);
 
-module.exports = router;
+module.exports = contactsRouter;
