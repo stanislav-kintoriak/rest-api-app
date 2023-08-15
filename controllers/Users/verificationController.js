@@ -1,6 +1,6 @@
 const { UserModel } = require("../../models/User");
 
-const verificationController = async (rec, res) => {
+const verificationController = async (req, res) => {
   const { verificationToken } = req.params;
 
   const user = await UserModel.findOne({ verificationToken });

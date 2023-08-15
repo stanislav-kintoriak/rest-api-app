@@ -4,6 +4,7 @@ const userValidMiddleware = require("./userValidMiddleware");
 const authMiddleware = require("./authMiddleware");
 const subscriptionMiddleware = require("./subscriptionMiddleware");
 const avatarMiddleware = require("./avatarMiddleware");
+const resendVerificationMiddleware = require("./resendVerificationMiddleware")
 
 module.exports = {
   patchMiddleware,
@@ -12,4 +13,5 @@ module.exports = {
   authMiddleware,
   subscriptionMiddleware,
   avatarMiddleware,
+  resendVerificationMiddleware,
 };

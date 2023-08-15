@@ -12,6 +12,8 @@ const { avatarController } = require("./avatarController");
 
 const { verificationController } = require("./verificationController");
 
+const {resendVerificationController} = require("./resendVerificationController")
+
 module.exports = {
   registerController,
   loginController,
@@ -20,4 +22,5 @@ module.exports = {
   subscriptionController,
   avatarController,
   verificationController,
+  resendVerificationController
 };

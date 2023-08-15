@@ -5,6 +5,7 @@ const {
   userValidMiddleware,
   subscriptionMiddleware,
   avatarMiddleware,
+  resendVerificationMiddleware
 } = require("../../middlewares");
 
 const {
@@ -15,6 +16,7 @@ const {
   subscriptionController,
   avatarController,
   verificationController,
+ resendVerificationController
 } = require("../../controllers/Users");
 
 const router = express.Router();
@@ -28,6 +30,8 @@ router.patch(
 router.post("/register", userValidMiddleware, registerController);
 
 router.get("/verify/:verificationToken", verificationController);
+
+router.post("/verify", resendVerificationMiddleware, resendVerificationController)
 
 router.post("/login", userValidMiddleware, loginController);
 router.post("/logout", authMiddleware, logoutController);
