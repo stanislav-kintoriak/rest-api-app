@@ -8,7 +8,9 @@ const { logoutController } = require("./logoutController");
 
 const { subscriptionController } = require("./subscriptionController");
 
-const {avatarController} = require("./avatarController")
+const { avatarController } = require("./avatarController");
+
+const { verificationController } = require("./verificationController");
 
 module.exports = {
   registerController,
@@ -17,4 +19,5 @@ module.exports = {
   logoutController,
   subscriptionController,
   avatarController,
+  verificationController,
 };

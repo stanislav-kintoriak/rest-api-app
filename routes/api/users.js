@@ -14,6 +14,7 @@ const {
   registerController,
   subscriptionController,
   avatarController,
+  verificationController,
 } = require("../../controllers/Users");
 
 const router = express.Router();
@@ -25,6 +26,9 @@ router.patch(
   subscriptionController
 );
 router.post("/register", userValidMiddleware, registerController);
+
+router.get("/verify/:verificationToken", verificationController);
+
 router.post("/login", userValidMiddleware, loginController);
 router.post("/logout", authMiddleware, logoutController);
 router.get("/current", authMiddleware, currentController);
