@@ -1,6 +1,6 @@
 const multer = require("multer");
 const { nanoid } = require("nanoid");
-const ServiceError = require("../services/serviceError");
+const ServiceError = require("../services");
 const path = require("path");
 
 const tempDir = path.join(process.cwd(), "tmp");
